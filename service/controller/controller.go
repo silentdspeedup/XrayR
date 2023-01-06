@@ -77,6 +77,7 @@ func (c *Controller) Start() error {
 	}
 	c.nodeInfo = newNodeInfo
 	c.Tag = c.buildNodeTag()
+
 	// Add new tag
 	err = c.addNewTag(newNodeInfo)
 	if err != nil {
@@ -252,6 +253,7 @@ func (c *Controller) nodeInfoMonitor() (err error) {
 			log.Print(err)
 			return nil
 		}
+
 	} else {
 		var deleted, added []api.UserInfo
 		if usersChanged {
